@@ -1,0 +1,45 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="Login" class="com.exavalu.models.User" method="doLogin">
+            <result name="SUCCESS">employeeDetails.jsp</result>
+            <result name="FAILURE">login.jsp</result>
+        </action> 
+        <!--for search employee in menu bar-->
+        <action name="SearchEmployee" class="com.exavalu.models.Employee" method="doSearch">
+            <result name="SUCCESS">searchemployee.jsp</result>
+            <result name="FAILURE">employeeDetails.jsp</result>
+        </action>   
+        <!--for create employee in menu bar-->
+        <action name="CreateEmployee" class="com.exavalu.models.Employee" method="doCreate">
+            <result name="SUCCESS">employeeDetails.jsp</result>
+            <result name="FAILURE">createemployee.jsp</result>
+        </action>
+        
+        <action name="Logout" class="com.exavalu.models.User" method="doLogout">
+            <result name="SUCCESS">logout.jsp</result>
+            <result name="FAILURE">login.jsp</result>
+        </action> 
+        <action name="EditEmployee" class="com.exavalu.models.Employee" method="dogetEmpDetail">
+            <result name="SUCCESS">editemployee.jsp</result>
+            <result name="FAILURE">createemployee.jsp</result>
+        </action>
+        <action name="SaveEmployee" class="com.exavalu.models.Employee" method="doSaveUpdate">
+            <result name="SUCCESS">employeeDetails.jsp</result>
+            <result name="FAILURE">editemployee.jsp</result>
+        </action> 
+        <action name="DeleteEmployee" class="com.exavalu.models.Employee" method="doDelete">
+            <result name="SUCCESS">employeeDetails.jsp</result>
+            <result name="FAILURE">searchemployee.jsp</result>
+        </action> 
+        <action name="SignUp" class="com.exavalu.models.User" method="doSignUp">
+            <result name="SUCCESS">login.jsp</result>
+            <result name="FAILURE">signup.jsp</result>
+        </action> 
+          
+    </package>
+</struts>
